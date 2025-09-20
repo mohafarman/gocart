@@ -15,3 +15,8 @@ func (app *application) responseError(w http.ResponseWriter, r *http.Request, st
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
+
+func (app *application) responseNotFound(w http.ResponseWriter, r *http.Request) {
+	msg := "the requested resource could not be found"
+	app.responseError(w, r, http.StatusNotFound, msg)
+}

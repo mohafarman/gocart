@@ -12,7 +12,7 @@ vet:
 
 ## run: run the cmd/api application
 run: vet
-	@go build ./cmd/api/ && ./api
+	@go build -o out ./cmd/api/ && ./out
 
 clean:
 	go clean -x
